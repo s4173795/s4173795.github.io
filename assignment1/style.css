@@ -1,0 +1,75 @@
+/* 
+==============================
+DESIGN RATIONALE (IMPORTANT)
+==============================
+
+This webpage is designed to reflect the structure and experience of the Gehry Getty interactive website.
+
+1. Visual Hierarchy:
+I used a strong header with a contrasting background colour to immediately establish the title and context of the page. Section headings are styled consistently to create a clear hierarchy, helping users navigate through the 13 responses easily.
+
+2. Layout and Readability:
+Each section is separated into card-like blocks with padding and margin. This improves readability and mimics the “chapter” structure seen in the Gehry experience. The max-width ensures the text remains readable on large screens, which is important for accessibility and user comfort.
+
+3. Interaction Design:
+A subtle hover scale effect is applied to sections. This reflects the idea of interactivity from the original website, even though this page is primarily text-based. It provides feedback to the user and makes the page feel more dynamic.
+
+4. Colour Choices:
+The blue colour palette was chosen to feel professional and calm, aligning with the tone of an educational museum-style experience. It also creates a visual contrast between header, content, and background.
+
+5. Typography:
+A simple sans-serif font is used for clarity and accessibility. The goal is to prioritise content over decoration, similar to the original site’s focus on information and visuals.
+
+6. Simplicity:
+No external libraries were used in accordance with assignment rules. The design relies on basic CSS to demonstrate understanding of layout, spacing, and interaction principles.
+
+7. AI Acknowledgement:
+Initial structure and layout ideas were supported by AI tools, but all code was reviewed, edited, and implemented manually to ensure understanding and compliance with academic integrity requirements.
+
+Overall, the design aims to translate an interactive, visual experience into a structured, readable format while maintaining elements of engagement and clarity.
+*/
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f7fa;
+  margin: 0;
+  color: #222;
+  line-height: 1.6;
+}
+
+header {
+  background-color: #1d3557;
+  color: white;
+  text-align: center;
+  padding: 2rem;
+}
+
+main {
+  padding: 1rem;
+}
+
+/* Section cards */
+section {
+  background: white;
+  margin: 1rem auto;
+  padding: 1.5rem;
+  max-width: 800px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+/* subtle interaction feedback */
+section:hover {
+  transform: scale(1.02);
+}
+
+h2 {
+  color: #1d3557;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
