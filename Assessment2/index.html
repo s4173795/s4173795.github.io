@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FocusFlow Media Player</title>
+<!--
+    The main container keeps all controls grouped together.
+    A centered layout was chosen because it creates a calm
+    and focused experience for study sessions.
+    -->
+
+    <main class="player-container">
+
+        <h1>FocusFlow</h1>
+        <p class="subtitle">Relaxation & Study Music</p>
+
+        <audio id="audio-player">
+            <source src="erokia_ambient-wave-56-msfxp7-78.mp3" type="audio/mp3">
+        </audio>
+
+        <!-- Progress section -->
+        <div class="progress-container" id="progress-container">
+            <div class="progress" id="progress"></div>
+        </div>
+
+        <div class="time-container">
+            <span id="current-time">0:00</span>
+            <span id="duration">0:00</span>
+        </div>
+
+        <!--
+        Large controls improve accessibility and usability,
+        especially on mobile devices.
+        -->
+
+        <div class="controls">
+            <button id="prev-btn">⏮</button>
+            <button id="play-btn">▶</button>
+            <button id="next-btn">⏭</button>
+        </div>
+
+        <!-- Volume controls -->
+        <div class="volume-section">
+            <label for="volume">Volume</label>
+            <input type="range" id="volume" min="0" max="1" step="0.01" value="0.7">
+        </div>
+
+        <!--
+        The focus timer is the main custom interactive feature.
+        It matches the study and relaxation context by helping
+        users manage focus sessions.
+        -->
+
+        <section class="timer-section">
+            <h2>Focus Timer</h2>
+
+            <div class="timer-buttons">
+                <button class="timer-btn" data-time="25">25 Min</button>
+                <button class="timer-btn" data-time="45">45 Min</button>
+                <button class="timer-btn" data-time="60">60 Min</button>
+            </div>
+
+            <p id="timer-display">00:00</p>
+            
+            <script>
+let t;
+
+document.querySelectorAll(".timer-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    clearInterval(t);
+
+    let s = btn.dataset.time * 60;
+
+    t = setInterval(() => {
+      let m = Math.floor(s / 60);
+      let sec = s % 60;
+
+      document.getElementById("timer-display").textContent =
+        `${m}:${sec < 10 ? "0" : ""}${sec}`;
+
+      if (s-- <= 0) clearInterval(t);
+    }, 1000);
+  });
+});
+</script>
+    
+        <!--
+        Dark mode improves usability at night and reduces
+        eye strain during long study sessions.
+        -->
+
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
