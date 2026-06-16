@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 3 Hover Prototype</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <audio id="music-player"></audio>
+
+  <body>
+    <main class="prototype">
+      <section class="title-box">
+        <h1>Discover Music</h1>
+        <p>Hover over an album to reveal its sound identity.</p>
+      </section>
+
+      <section class="album-row">
+        <button
+          class="album"
+          data-title="PERSONA5 ORIGINAL SOUNDTRACK"
+          data-genre="Game Soundtrack"
+          data-desc="Featuring laid-back, everyday music and dynamic battle tracks."
+          data-audio="P5R.mp3"
+        >
+          <audio id="music-player" src="P5R.mp3"></audio>
+          <img src="P5R.png" />
+        </button>
+
+        <button
+          class="album"
+          data-title="Minecraft - Volume Alpha"
+          data-genre="Game Soundtrack"
+          data-desc="A slow-paced melody and a soul-stirring sense of loneliness"
+          data-audio="C418.mp3"
+        >
+          <audio id="music-player" src="C418.mp3"></audio>
+          <img src="C418.png" />
+        </button>
+
+        <button
+          class="album"
+          data-title="Blond"
+          data-genre="R&B/Soul"
+          data-desc="An avant-garde musical style and soul-stirring sadness."
+          data-audio="Blond.mp3"
+        >
+          <audio id="music-player" src="Blond.mp3"></audio>
+          <img src="Blond.png" />
+        </button>
+
+        <button
+          class="album"
+          data-title="NEVER ENOUGH"
+          data-genre="R&B"
+          data-desc="Open, messy, and fascinating"
+          data-audio="Superpowers.mp3"
+        >
+          <audio id="music-player" src="Superpowers.mp3"></audio>
+          <img src="Superpowers.png" />
+        </button>
+
+        <button
+          class="album"
+          data-title="1996 (Re-Mastered)"
+          data-genre="Piano Trio"
+          data-desc="A masterpiece of great significance"
+          data-audio="1996.mp3"
+        >
+          <audio id="music-player" src="1996.mp3"></audio>
+          <img src="1996.png" />
+        </button>
+
+        <button
+          class="album"
+          data-title="万能青年旅店"
+          data-genre="Rock Alternative Rock Indie Rock Folk Rock Progressive Rock"
+          data-desc="The Spiritual Totem of Chinese Rock"
+          data-audio="杀死那个石家庄人.mp3"
+        >
+          <audio id="music-player" src="杀死那个石家庄人.mp3"></audio>
+          <img src="万青.png" />
+        </button>
+      </section>
+
+      <section class="preview-panel">
+        <div class="cover-box">
+          <div class="cover-art"></div>
+        </div>
+
+        <div class="info-box">
+          <p class="small-label">Hover Preview</p>
+          <h2 id="album-title">Dream Waves</h2>
+          <h3 id="album-genre">Ambient Pop</h3>
+          <p id="album-desc">
+            Soft electronic textures designed for relaxing and slow listening.
+          </p>
+
+          <div class="wave">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+
+<!-- reference for album cover and music sources -->:
+<!-- https://music.youtube.com/playlist?list=OLAK5uy_kUEOiyaARRdjKOan3uiJZFEosE5yNjrIY -->
+<!-- https://music.youtube.com/watch?v=5w3rRFWzjcM&list=OLAK5uy_nhQ2EVQRbH-uWJbaesYXRQGZMzinN0qqg -->
+<!-- https://music.youtube.com/watch?v=9cHbvRUALrc&list=OLAK5uy_kR5nATUuJR0fuXd5XabH2VFwT63oVlaMM -->
+<!-- https://music.youtube.com/watch?v=bSe3xemu1LY&list=OLAK5uy_nuRvxtsNO40E64idB-6mv-xVOmzgD1kYI -->
+<!-- https://music.youtube.com/watch?v=1OZDaRhHHyM&list=OLAK5uy_lUdCgi-4IWimgRj41b7ry9vQry8jm7vz8 -->
+<!-- https://music.youtube.com/watch?v=BXsFnVQverk&list=OLAK5uy_lKbiy23SXwG0m1ODNL10EtzzCcUDF9JD8 -->

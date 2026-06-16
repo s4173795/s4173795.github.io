@@ -1,0 +1,238 @@
+/*
+Assignment 3 Design Comments
+
+This prototype is based on the context of music discovery.
+The selected action is hover. I chose hover because it works well
+for desktop browsing and allows users to quickly explore different
+albums without opening a new page.
+
+The layout is inspired by a wireframe structure: a large title area,
+a row of album buttons, and a larger preview section underneath.
+This makes the prototype very focused on one interaction instead of
+looking like a full website.
+
+The album row acts like a selection menu. When the user hovers over
+one album, the preview panel changes. This creates a clear relationship
+between action and feedback.
+
+The large preview panel is important because it shows the result of
+the hover interaction. The user can immediately see the selected album
+title, genre, description, cover colour, and animated sound wave.
+
+The dark background was chosen because music platforms such as Spotify
+and Apple Music often use dark interfaces to make artwork and controls
+stand out. The white outlines are inspired by the simple wireframe style
+shown in the planning document, but the gradients make the design feel
+more finished.
+
+A challenge with hover is that it does not work the same way on mobile
+devices. If this prototype became a larger project, I would add a click
+or tap version for phone users. A benefit of this prototype is that it
+can easily become a real music browser by adding audio files later.
+
+Sources:
+Spotify Design Guidelines:
+https://developer.spotify.com/documentation/design
+
+Apple Music:
+https://music.apple.com
+
+Awwwards Hover Interaction Examples:
+https://www.awwwards.com/awwwards/collections/hovers-cursors-and-cute-interactions/
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #050505;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+}
+
+.prototype {
+  width: 92%;
+  max-width: 1100px;
+  margin: 40px auto;
+  border: 3px solid #000000;
+  padding: 35px;
+  min-height: 700px;
+}
+
+.title-box {
+  border: 2px solid white;
+  border-radius: 18px;
+  padding: 25px 35px;
+  width: 430px;
+  margin-bottom: 55px;
+}
+
+.title-box h1 {
+  font-size: 58px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.title-box p {
+  color: #bfbfbf;
+  font-size: 16px;
+}
+
+.album-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 55px;
+}
+
+.album {
+  width: 135px;
+  height: 125px;
+  border: 2px solid white;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  background: none;
+  padding: 0;
+}
+
+.album:hover,
+.album.active {
+  transform: translateY(-10px) scale(1.08);
+  border-color: #2f9bff;
+  box-shadow: 0 0 25px rgba(47, 155, 255, 0.65);
+  background: rgba(47, 155, 255, 0.12);
+}
+
+.preview-panel {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 55px;
+}
+
+.cover-box,
+.info-box {
+  height: 500px;
+  border: 2px solid white;
+  border-radius: 18px;
+  overflow: hidden;
+  .cover-art {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    #album-desc {
+      height: 75px;
+    }
+  }
+}
+
+.cover-box {
+  padding: 25px;
+}
+
+.cover-art {
+  width: 100%;
+  height: 100%;
+  border-radius: 14px;
+  background: radial-gradient(circle at top left, #8ee6ff, #6147ff, #101018);
+  transition: 0.4s ease;
+}
+
+.info-box {
+  padding: 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.small-label {
+  color: #2f9bff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 13px;
+  margin-bottom: 15px;
+}
+
+.info-box h2 {
+  font-size: 44px;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+
+.info-box h3 {
+  font-size: 21px;
+  color: #cccccc;
+  margin-bottom: 18px;
+}
+
+.info-box p {
+  line-height: 1.5;
+  color: #dddddd;
+  margin-bottom: 20px;
+}
+
+.wave {
+  height: 35px;
+  display: flex;
+  align-items: end;
+  gap: 7px;
+  margin-bottom: 22px;
+}
+
+.wave span {
+  width: 7px;
+  height: 12px;
+  border-radius: 20px;
+  background: white;
+  animation: waveMove 0.8s infinite ease-in-out;
+}
+
+.wave span:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.wave span:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.wave span:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+@keyframes waveMove {
+  0%,
+  100% {
+    height: 12px;
+  }
+
+  50% {
+    height: 34px;
+  }
+}
+
+@media (max-width: 850px) {
+  .title-box {
+    width: 100%;
+  }
+
+  .album-row {
+    flex-wrap: wrap;
+  }
+
+  .album {
+    width: 30%;
+  }
+
+  .preview-panel {
+    grid-template-columns: 1fr;
+  }
+}
+.album img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
